@@ -1,2 +1,5 @@
-array = [[[1,2,3], 2, 3], [4, 5, 6], [7, 8, 9]]
-p array[0][0].join(" ")
+require 'matrix'
+n, m = gets.split.map &:to_i
+a = Matrix[*(1..n).map{ gets.split.map &:to_i }]
+v = Vector[*(1..m).map{ gets.to_i }]
+puts (a * v).to_a
