@@ -9,8 +9,7 @@ m.times do
   if ball[x-1] < c
     ball[y-1] += ball[x-1]
     ball[x-1] = 0
-  
-  else  
+  else
     ball[x-1] -= c
     ball[y-1] += c
   end
