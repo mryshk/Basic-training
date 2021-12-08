@@ -1,20 +1,34 @@
-n,x = gets.chomp.split.map(&:to_i)
-a =[]
-n.times do
-    a_i,b_i,c_i,d_i=gets.split.map(&:to_i)
-    if x<=a_i
-        a << b_i
-    else
-      count = (x - a_i).to_f/c_i
-      if count.to_f <= 1
-        price = b_i + d_i
-        a << price.to_i
-      else
-        price = count.to_i * d_i + b_i
-        a << price.to_i
-      end
-    end
+r,c = gets.chomp.split.map(&:to_i)
+arr = Array.new()
+r_sum = Array.new(r)
+c_sum = Array.new(c)
+r.times do |i|
+  arr[i] = gets.chomp.split.map(&:to_i)
 end
-min = a.min
-max = a.max
-puts"#{min} #{max}"
+r.times do |i|
+  r_sum[i] = 0
+end
+c.times do |j|
+  c_sum[j] = 0
+end
+# 下記のように数字の０を定義しないと計算ができない。
+rc_sum = 0
+r.times do |i|
+  c.times do |j|
+    r_sum[i] += arr[i][j]
+    c_sum[j] += arr[i][j]
+    rc_sum += arr[i][j]
+  end
+end
+r.times do |i|
+  c.times do |j|
+    print arr[i][j]," "
+  end
+  print r_sum[i]
+  puts
+end
+c.times do |j|
+  print c_sum[j], " "
+end
+print rc_sum
+puts
