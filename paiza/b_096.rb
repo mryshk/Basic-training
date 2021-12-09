@@ -6,8 +6,13 @@ c = 0
 h.times do |i|
   array[i] =  gets.chomp.chars
   if array[i].include?("#")
-    numbers << array[i].index("#")
+    array[i].each_with_index do |item, i|
+      if item == "#"
+        numbers << i
+      end
+    end
     array[i].fill("#")
+  
   else
     numbers.each do |j|
       array[i][j] = "#"
