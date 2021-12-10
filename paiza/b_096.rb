@@ -29,3 +29,5 @@ h.times do |i|
 end
 # 最後に#の数を数えて終わる。
 puts array.join("").count("#")
+
+
