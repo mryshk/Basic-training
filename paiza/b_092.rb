@@ -33,6 +33,10 @@ re.each_with_index do |item,i|
     subject << array[i]
   end
 end
-subject.each do |i|
- puts a[]
+c = subject.size
+resolve = []
+for i in 0...c
+  resolve << a[subject[i][0]][subject[i][1]]
 end
+puts re.count(re.min)
+puts resolve.sort
