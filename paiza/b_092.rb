@@ -22,9 +22,6 @@ array.each_with_index do |item,i|
   end
 end
 re = []
-# result.each_with_index do |item , i|
-#   re << result[i].sum
-# end
 result = result.each_slice(2).to_a
 re = result.map(&:sum)
 subject = []
