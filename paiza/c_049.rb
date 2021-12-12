@@ -1,9 +1,15 @@
 n = gets.to_i
 a = []
 n.times do |i|
-  a.push(gets.split.map(&:to_i))
+  a.push(gets.to_i)
 end
-a = a.each_cons(2).to_a
 result = []
+result.push((a[0]-1).abs)
 
-puts  a[0][0]-a[0][1]
+a = a.each_cons(2).to_a
+a.each do |i|
+  result << (i[0]-i[1]).abs 
+end
+
+
+puts result.sum
