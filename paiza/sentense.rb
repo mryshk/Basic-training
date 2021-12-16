@@ -30,7 +30,7 @@
     # default {two_words_connctor: "and"} が 引数options {two_words_connector: "と"}に変更される（破壊的に）
     options = default_connectors.merge!(options)
 
-   # レシーバの要素数の場合分け。
+   # レシーバ（配列）の要素数の場合分け。
     case length
     # 要素数が０の場合,空白""を表示
     when 0
