@@ -45,9 +45,9 @@
     when 2
       +"#{self[0]}#{options[:two_words_connector]}#{self[1]}"
     # 要素数が３以上の場合
-    # レシーバの配列が０の要素〜最後から２つ目の要素までを、optionsのkey[:words_connector]のvalueとくっつけて表示。
-    # 
     else
+    # レシーバの配列が０の要素〜最後から２つ目の要素までを、ハッシュoptionsのkey[:words_connector]のvalueとくっつけて表示。
+    # その後に、ハッシュoptionsのkey[:last_words_connector]のvalueを変数展開し表示。残りの配列の最後の要素を表示。
       +"#{self[0...-1].join(options[:words_connector])}#{options[:last_word_connector]}#{self[-1]}"
     end
   end
